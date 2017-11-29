@@ -18,6 +18,46 @@ The following are included out of the box:
 * Testing using [Jest](https://facebook.github.io/jest/)
 * Husky for git hooks
 
+## Requirements
+
+* node ^8.0.0
+* yarn ^1.3.0 | npm ^5.5.0
+
+## Installation
+
+You can install this pack to your own machine by doing the following:
+
+```
+$ git clone https://github.com/jhnferraris/nodejs-starter-pack <some-node-project>
+$ cd <some-node-project>
+```
+
+You need to update the remote url of the repository so it won't push to this repository
+
+```
+$ git remote set-url origin <your-own-node-repo-url>
+```
+
+**OR**
+
+You can just simply fork this repository.
+
+When your repository is all set, install the dependencies:
+
+```
+$ yarn
+```
+
+## Running your application
+
+By default, the command is:
+
+```
+$ yarn start
+```
+
+But you can change it based on your flavor.
+
 ## Commands
 
 | Command | Description |
@@ -26,7 +66,7 @@ The following are included out of the box:
 | `yarn start` | Starts the application |
 | `yarn precommit` | Executes `test` script prior to a git commit |
 | `yarn prepush` | Executes `test` prior to a git push |
+| `yarn prod:build` | Builds a "production" ready code at `\lib\`|
 
-## Installation
 
 
