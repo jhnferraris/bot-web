@@ -4,7 +4,7 @@ Inspired from [js-stack-from-scratch](https://github.com/verekia/js-stack-from-s
 
 **Disclaimer**
 
-*This is not intended to force anyone to use this repository to start their NodeJS apps. I wrote this with the intention to avoid the hassle of memorizing libs to start a NodeJS application*
+*This is not intended to force anyone to use this repository to start their NodeJS apps. I wrote this with the intention to avoid the hassle of memorizing libs to start a NodeJS application.`*
 *Web frameworks such as Express or React are not included since it will be up to the developers discretion to add those.*
 
 ## Libraries
@@ -20,8 +20,8 @@ The following are included out of the box:
 
 ## Requirements
 
-* node ^8.0.0
-* yarn ^1.3.0 | npm ^5.5.0
+* node `^8.0.0`
+* yarn `^1.3.0` | npm `^5.5.0`
 
 ## Installation
 
