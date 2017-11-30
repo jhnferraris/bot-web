@@ -1,6 +1,7 @@
 // @flow
 
 import 'babel-polyfill';
+import 'semantic-ui-sass';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

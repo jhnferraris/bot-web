@@ -19,6 +19,10 @@ export default {
   module: {
     rules: [
       { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader', 'resolve-url-loader'],
+      },
     ],
   },
   devtool: isProd ? false : 'source-map',

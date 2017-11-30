@@ -1,13 +1,15 @@
 // @flow
 
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 
 type Props = {
   label: string,
   handleClick: Function,
 }
 
-const Button = ({ label, handleClick }: Props) =>
-  <button onClick={handleClick}>{label}</button>;
+const ButtonExampleButton = ({ label, handleClick }: Props) =>
+  <Button onClick={handleClick}>{label}</Button>;
 
-export default Button;
+
+export default ButtonExampleButton;
