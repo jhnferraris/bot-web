@@ -1,5 +1,6 @@
 {
   "env": {
+    "browser": true,
     "jest": true
   },
   "extends": [
@@ -12,5 +13,8 @@
   "rules": {
     "semi": "error",
     "no-unexpected-multiline": 2
+  },
+  "settings": {
+    "polyfills": ["fetch"]
   }
 }
