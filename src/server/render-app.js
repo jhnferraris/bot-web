@@ -11,7 +11,6 @@ const renderApp = (title: string) =>
   </head>
   <body>
     <div class="${APP_CONTAINER_CLASS}"></div>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="${isProd ? STATIC_PATH : `http://localhost:${WDS_PORT}/dist`}/js/bundle.js"></script>
 
   </body>

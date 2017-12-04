@@ -9,7 +9,7 @@ type Props = {
 }
 
 const ButtonExampleButton = ({ label, handleClick }: Props) =>
-  <Button onClick={handleClick}>{label}</Button>;
+  <Button primary className="button-test" onClick={handleClick}>{label}</Button>;
 
 
 export default ButtonExampleButton;

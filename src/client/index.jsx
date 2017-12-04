@@ -1,7 +1,5 @@
 // @flow
-
 import 'babel-polyfill';
-import 'semantic-ui-sass';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -15,8 +13,8 @@ import helloReducer from './reducers/hello';
 import { APP_CONTAINER_SELECTOR } from '../shared/config';
 import { isProd } from '../shared/util';
 
+require('./stylesheets/main.scss');
 const NextApp = require('./app').default;
-
 /* eslint no-underscore-dangle: 0 */
 const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 /* eslint function-paren-newline: 0 */

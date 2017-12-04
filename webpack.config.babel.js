@@ -21,7 +21,15 @@ export default {
       { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader', 'resolve-url-loader'],
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'file-loader',
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf|svg)$/,
+        loader: 'url-loader?limit=1000&name=[name].[ext]',
       },
     ],
   },
