@@ -1,5 +1,5 @@
 {
-  "name": "Bot Content Designer Web",
+  "name": "bot-content-designer-web",
   "version": "1.0.0",
   "description": "Web application to handle contents for our bots",
   "main": "index.js",
