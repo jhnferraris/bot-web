@@ -1,9 +1,9 @@
 {
-  "name": "nodejs-starter-pack",
+  "name": "Bot Content Designer Web",
   "version": "1.0.0",
-  "description": "Boilerplate for NodeJS development.",
+  "description": "Web application to handle contents for our bots",
   "main": "index.js",
-  "author": "John Ferraris (johnmichaelferraris@gmail.com)",
+  "author": "IT Apps Dev",
   "license": "MIT",
   "scripts": {
     "start": "yarn dev:start",
