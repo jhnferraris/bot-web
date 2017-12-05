@@ -3,17 +3,28 @@
 import React, { Component } from 'react';
 import { Segment } from 'semantic-ui-react';
 import CreateFaqForm from '../containers/create-form';
+import _ from 'lodash';
+
+const renderUtterances = utterances => {
+  return _.map(utterances, function(item) {
+    return (
+      <li>{item}</li>
+    )
+  });
+}
 
 export default class QuestionInfo extends Component {
   render() {
+    const { answer, utterances } = this.props;
     return (
       <Segment className="faq-segment">
-        <CreateFaqForm title="What are our HR policies" answer="Check out this link for our policies." />
+        <CreateFaqForm title="" answer={answer} />
         <Segment className="utterances">
           <label> Search Query Variations for ElasticSearch</label>
           <ol>
-            <li>Show me our HR policies</li>
-            <li>Alorica HR policy</li>
+            {
+              renderUtterances(utterances)
+            }
           </ol>
         </Segment>
       </Segment>

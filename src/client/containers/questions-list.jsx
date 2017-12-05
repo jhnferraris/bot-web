@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getQuestions: () => { dispatch(getQuestions) },
+  getQuestions: () => { dispatch(getQuestions()) },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionsList);

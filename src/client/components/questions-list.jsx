@@ -19,16 +19,20 @@ export default class QuestionsList extends Component {
     this.setState({ activeIndex: newIndex });
   }
 
+  componentDidMount() {
+    this.props.getQuestions();
+  }
+
   generateAccordionItems(questions, activeIndex, handleClick) {
     return _.map(questions, function(item, index) {
       return (
         <div>
           <Accordion.Title key={`question-${index}`} active={activeIndex === index} index={index} onClick={handleClick}>
-            <Icon name="dropdown" />
+            <Icon name="dropdown" key={`question-icon-${index}`}/>
             { item.title }
           </Accordion.Title>
-          <Accordion.Content active={activeIndex === index}>
-            <QuestionInfo />
+          <Accordion.Content key={`question-info-${index}`}active={activeIndex === index}>
+            <QuestionInfo { ...item }/>
           </Accordion.Content>
         </div>
       );

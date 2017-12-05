@@ -10,24 +10,29 @@ const initialState = Immutable.fromJS({
 
 const questions = [
   {
-    "title": "What is AskJosh bot?"
+    "title": "What is AskJosh bot?",
+    "answer": "This is our HR bot",
+    "utterances": [
+      "Who is AskJosh"
+    ],
   },
   {
-    "title": "What is our HR Policy?"
+    "title": "What is our HR Policy?",
+    "answer": "Check out this link..",
+    "utterances": [
+      "Give me our HR policies",
+      "Alorica HR Policies"
+    ]
   },
 ];
 
 const getQuestionsReducer = (state = initialState, action) => {
-  // console.log('Action executed: ' + action.type)
-  // switch (action.type) {
-  //   case GET_QUESTIONS:
-  //     return state.set('questions', questions)
-  //   default:
-  //     return state
-  // }
-
-  // Do stub for now. I can't seem to get this redux action to work.
-  return state.set('questions', questions);
+  switch (action.type) {
+    case GET_QUESTIONS:
+      return state.set('questions', questions)
+    default:
+      return state
+  }
 }
 
 export default getQuestionsReducer;
