@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Segment, Accordion, Icon } from 'semantic-ui-react';
 import QuestionInfo from '../containers/question-info';
+import _ from 'lodash';
 
 export default class QuestionsList extends Component {
   constructor(props, context) {
@@ -18,24 +19,27 @@ export default class QuestionsList extends Component {
     this.setState({ activeIndex: newIndex });
   }
 
+  generateAccordionItems(questions, activeIndex, handleClick) {
+    return _.map(questions, function(item, index) {
+      return (
+        <div>
+          <Accordion.Title key={`question-${index}`} active={activeIndex === index} index={index} onClick={handleClick}>
+            <Icon name="dropdown" />
+            { item.title }
+          </Accordion.Title>
+          <Accordion.Content active={activeIndex === index}>
+            <QuestionInfo />
+          </Accordion.Content>
+        </div>
+      );
+    });
+  }
   render() {
+    const { questions } = this.props;
     const { activeIndex } = this.state;
     return (
       <Accordion fluid styled>
-        <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick.bind(this)}>
-          <Icon name="dropdown" />
-          What is AskJosh Bot?
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
-          <QuestionInfo />
-        </Accordion.Content>
-        <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick.bind(this)}>
-          <Icon name="dropdown" />
-          What are our HR policies?
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
-          <QuestionInfo />
-        </Accordion.Content>
+        {this.generateAccordionItems(questions, activeIndex, this.handleClick.bind(this))}
       </Accordion>
     );
   }

@@ -11,13 +11,16 @@ import thunkMiddleware from 'redux-thunk';
 import App from './app';
 import { APP_CONTAINER_SELECTOR } from '../shared/config';
 import { isProd } from '../shared/util';
+import reducers from './reducers';
 
 require('./stylesheets/main.scss');
 const NextApp = require('./app').default;
 /* eslint no-underscore-dangle: 0 */
 const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 /* eslint function-paren-newline: 0 */
-const store = createStore(combineReducers({}),
+
+
+const store = createStore(reducers,
   composeEnhancers(applyMiddleware(thunkMiddleware)));
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR);
