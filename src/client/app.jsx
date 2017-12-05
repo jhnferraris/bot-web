@@ -1,9 +1,9 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Container } from 'semantic-ui-react';
+import { Container, Form, Segment, Button } from 'semantic-ui-react';
 import QuestionsList from './containers/questions-list';
-
+import LoginForm from './containers/login-form';
 import { APP_NAME } from '../shared/config';
 
 export default class App extends Component {
@@ -15,6 +15,9 @@ export default class App extends Component {
       <Container>
         <h1>{APP_NAME}</h1>
         <QuestionsList />
+        <Segment>
+          <LoginForm />
+        </Segment>
       </Container>
     );
   }
