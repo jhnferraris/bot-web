@@ -5,7 +5,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { apiMiddleware } from 'redux-api-middleware';
 import thunkMiddleware from 'redux-thunk';
 
 import App from './app';
@@ -21,7 +22,7 @@ const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMP
 
 
 const store = createStore(reducers,
-  composeEnhancers(applyMiddleware(thunkMiddleware)));
+  composeEnhancers(applyMiddleware(apiMiddleware, thunkMiddleware)));
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR);
 

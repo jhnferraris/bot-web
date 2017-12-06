@@ -1,38 +1,30 @@
 // @flow
 
 import Immutable from 'immutable';
+import { QUESTIONS_QUERY, QUESTIONS_QUERY_FAILED, QUESTIONS_QUERY_SUCCESS} from '../constants/question-action-types';
+import { getQuestions } from '../actions/api/questions';
 
-import { GET_QUESTIONS } from '../actions/get-questions';
-
-const initialState = Immutable.fromJS({
+const initialState = Immutable.Map({
   questions: [],
+  error: null,
 });
-
-const questions = [
-  {
-    "title": "What is AskJosh bot?",
-    "answer": "This is our HR bot",
-    "utterances": [
-      "Who is AskJosh"
-    ],
-  },
-  {
-    "title": "What is our HR Policy?",
-    "answer": "Check out this link..",
-    "utterances": [
-      "Give me our HR policies",
-      "Alorica HR Policies"
-    ]
-  },
-];
 
 const getQuestionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_QUESTIONS:
-      return state.set('questions', questions)
+    case QUESTIONS_QUERY:
+      getQuestions();
+      return state;
+    case QUESTIONS_QUERY_SUCCESS:
+      return state.merge({
+        questions: action.payload,
+      });
+    case QUESTIONS_QUERY_FAILED:
+      return state.merge({
+        error: action.error,
+      });
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default getQuestionsReducer;
